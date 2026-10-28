@@ -1,0 +1,602 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#0b0b0b">
+    <title>Portfolio // Mombasa Swahili Conservation</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..800;1,400..800&family=Work+Sans:ital,wght@0,400..700;1,400..700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./style.css">
+    <script src="./script.js" defer></script>
+  </head>
+  <body>
+    <header class="site-header">
+      <a class="wordmark" href="#overview" aria-label="Portfolio home">Portfolio</a>
+      <span class="header-note">// Architectural Archive</span>
+    </header>
+
+    <section class="portfolio-launchpad" aria-label="Portfolio categories">
+      <button class="launch-card launch-card-architecture" data-main-category="architecture" type="button" onclick="const section = document.getElementById('architecture-disclosure'); section.open = true; section.scrollIntoView({ behavior: 'smooth', block: 'start' });">
+        <img class="launch-card-image" src="./A.08%20Swa%20Rend.jpg" alt="" aria-hidden="true">
+        <span class="launch-card-shade" aria-hidden="true"></span>
+        <span class="launch-card-content">
+          <svg class="launch-card-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M3 21h18M5 21V8l7-5 7 5v13M9 21v-7h6v7M8 10h.01M16 10h.01"/><path d="M2 8h20"/></svg>
+          <span class="launch-card-title">Architecture</span>
+          <span class="launch-card-description">Buildings, places, and research shaped around the lives within them.</span>
+        </span>
+      </button>
+      <button class="launch-card launch-card-interior" data-main-category="interior-design-view" type="button" onclick="document.querySelector('.category-tag[aria-controls=interior-design-view]').click(); document.getElementById('interior-design-view').scrollIntoView({ behavior: 'smooth', block: 'start' });">
+        <img class="launch-card-image" src="./NM-2.JPG" alt="" aria-hidden="true">
+        <span class="launch-card-shade" aria-hidden="true"></span>
+        <span class="launch-card-content">
+          <svg class="launch-card-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M4 20V9l8-5 8 5v11M8 20v-6h8v6M7 10h.01M17 10h.01"/><path d="M2 20h20"/></svg>
+          <span class="launch-card-title">Interior Design</span>
+          <span class="launch-card-description">Material, light, and shared space considered from within.</span>
+        </span>
+      </button>
+      <button class="launch-card launch-card-art" data-main-category="art-section-view" type="button" onclick="document.querySelector('.category-tag[aria-controls=art-section-view]').click(); document.getElementById('art-section-view').scrollIntoView({ behavior: 'smooth', block: 'start' });">
+        <img class="launch-card-image" src="./Protrait%201.jpg" alt="" aria-hidden="true">
+        <span class="launch-card-shade" aria-hidden="true"></span>
+        <span class="launch-card-content">
+          <svg class="launch-card-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M12 3a9 9 0 1 0 0 18h1.4a2.1 2.1 0 0 0 1.5-3.6 1.8 1.8 0 0 1 1.3-3.1H18a3 3 0 0 0 3-3c0-4.6-4-8.3-9-8.3Z"/><path d="M7.5 10h.01M10 7.5h.01M15 8h.01M17 11h.01"/></svg>
+          <span class="launch-card-title">Art Section</span>
+          <span class="launch-card-description">Drawing and image-making as another way to observe form.</span>
+        </span>
+      </button>
+    </section>
+
+    <section class="category-view" id="interior-design-view" aria-labelledby="interior-design-title" hidden="until-found">
+      <div class="category-view-heading">
+        <div><h2 id="interior-design-title">Short Term Rentals (AIRBNBS)</h2></div>
+        <button class="category-view-close" type="button" data-close-category="interior-design-view">Close view</button>
+      </div>
+      <details class="collection-folder" style="--collection-cover: url('./NM-2.JPG')">
+        <summary class="collection-folder-title"><span>Sunset Haven<br>Westlands</span></summary>
+        <div class="collection-folder-content">
+          <div class="art-gallery">
+            <figure class="art-card"><button class="project-image-trigger" type="button" data-image="./NM.JPG" data-caption="Short Term Rental // Photo 01" aria-label="Enlarge rental photo 1"><img src="./NM.JPG" alt="Short-term rental photo 1" loading="lazy"></button><figcaption>Rental photo 01</figcaption></figure>
+            <figure class="art-card"><button class="project-image-trigger" type="button" data-image="./NM-2.JPG" data-caption="Short Term Rental // Photo 02" aria-label="Enlarge rental photo 2"><img src="./NM-2.JPG" alt="Short-term rental photo 2" loading="lazy"></button><figcaption>Rental photo 02</figcaption></figure>
+            <figure class="art-card"><button class="project-image-trigger" type="button" data-image="./nm-3.png" data-caption="Short Term Rental // Photo 03" aria-label="Enlarge rental photo 3"><img src="./nm-3.png" alt="Short-term rental photo 3" loading="lazy"></button><figcaption>Rental photo 03</figcaption></figure>
+            <figure class="art-card"><button class="project-image-trigger" type="button" data-image="./NM-4.JPG" data-caption="Short Term Rental // Photo 04" aria-label="Enlarge rental photo 4"><img src="./NM-4.JPG" alt="Short-term rental photo 4" loading="lazy"></button><figcaption>Rental photo 04</figcaption></figure>
+            <figure class="art-card"><button class="project-image-trigger" type="button" data-image="./nm-5.png" data-caption="Short Term Rental // Photo 05" aria-label="Enlarge rental photo 5"><img src="./nm-5.png" alt="Short-term rental photo 5" loading="lazy"></button><figcaption>Rental photo 05</figcaption></figure>
+            <figure class="art-card"><button class="project-image-trigger" type="button" data-image="./NM-6.JPG" data-caption="Short Term Rental // Photo 06" aria-label="Enlarge rental photo 6"><img src="./NM-6.JPG" alt="Short-term rental photo 6" loading="lazy"></button><figcaption>Rental photo 06</figcaption></figure>
+            <figure class="art-card"><button class="project-image-trigger" type="button" data-image="./NM-7.JPG" data-caption="Short Term Rental // Photo 07" aria-label="Enlarge rental photo 7"><img src="./NM-7.JPG" alt="Short-term rental photo 7" loading="lazy"></button><figcaption>Rental photo 07</figcaption></figure>
+            <figure class="art-card"><button class="project-image-trigger" type="button" data-image="./NM-8.JPG" data-caption="Short Term Rental // Photo 08" aria-label="Enlarge rental photo 8"><img src="./NM-8.JPG" alt="Short-term rental photo 8" loading="lazy"></button><figcaption>Rental photo 08</figcaption></figure>
+            <figure class="art-card"><button class="project-image-trigger" type="button" data-image="./NM-9.JPG" data-caption="Short Term Rental // Photo 09" aria-label="Enlarge rental photo 9"><img src="./NM-9.JPG" alt="Short-term rental photo 9" loading="lazy"></button><figcaption>Rental photo 09</figcaption></figure>
+            <figure class="art-card"><button class="project-image-trigger" type="button" data-image="./nm-10.png" data-caption="Short Term Rental // Photo 10" aria-label="Enlarge rental photo 10"><img src="./nm-10.png" alt="Short-term rental photo 10" loading="lazy"></button><figcaption>Rental photo 10</figcaption></figure>
+            <figure class="art-card"><button class="project-image-trigger" type="button" data-image="./NM-11.JPG" data-caption="Short Term Rental // Photo 11" aria-label="Enlarge rental photo 11"><img src="./NM-11.JPG" alt="Short-term rental photo 11" loading="lazy"></button><figcaption>Rental photo 11</figcaption></figure>
+            <figure class="art-card"><button class="project-image-trigger" type="button" data-image="./nm-12.png" data-caption="Short Term Rental // Photo 12" aria-label="Enlarge rental photo 12"><img src="./nm-12.png" alt="Short-term rental photo 12" loading="lazy"></button><figcaption>Rental photo 12</figcaption></figure>
+            <figure class="art-card"><button class="project-image-trigger" type="button" data-image="./NM-13.JPG" data-caption="Short Term Rental // Photo 13" aria-label="Enlarge rental photo 13"><img src="./NM-13.JPG" alt="Short-term rental photo 13" loading="lazy"></button><figcaption>Rental photo 13</figcaption></figure>
+            <figure class="art-card"><button class="project-image-trigger" type="button" data-image="./nm-14.png" data-caption="Short Term Rental // Photo 14" aria-label="Enlarge rental photo 14"><img src="./nm-14.png" alt="Short-term rental photo 14" loading="lazy"></button><figcaption>Rental photo 14</figcaption></figure>
+            <figure class="art-card"><button class="project-image-trigger" type="button" data-image="./nm-15.png" data-caption="Short Term Rental // Photo 15" aria-label="Enlarge rental photo 15"><img src="./nm-15.png" alt="Short-term rental photo 15" loading="lazy"></button><figcaption>Rental photo 15</figcaption></figure>
+            <figure class="art-card"><button class="project-image-trigger" type="button" data-image="./NM-16.JPG" data-caption="Short Term Rental // Photo 16" aria-label="Enlarge rental photo 16"><img src="./NM-16.JPG" alt="Short-term rental photo 16" loading="lazy"></button><figcaption>Rental photo 16</figcaption></figure>
+            <figure class="art-card"><button class="project-image-trigger" type="button" data-image="./NM-17.JPG" data-caption="Short Term Rental // Photo 17" aria-label="Enlarge rental photo 17"><img src="./NM-17.JPG" alt="Short-term rental photo 17" loading="lazy"></button><figcaption>Rental photo 17</figcaption></figure>
+            <figure class="art-card"><button class="project-image-trigger" type="button" data-image="./NM-18.JPG" data-caption="Short Term Rental // Photo 18" aria-label="Enlarge rental photo 18"><img src="./NM-18.JPG" alt="Short-term rental photo 18" loading="lazy"></button><figcaption>Rental photo 18</figcaption></figure>
+            <figure class="art-card"><button class="project-image-trigger" type="button" data-image="./NM-19.JPG" data-caption="Short Term Rental // Photo 19" aria-label="Enlarge rental photo 19"><img src="./NM-19.JPG" alt="Short-term rental photo 19" loading="lazy"></button><figcaption>Rental photo 19</figcaption></figure>
+            <figure class="art-card"><button class="project-image-trigger" type="button" data-image="./NM-20.JPG" data-caption="Short Term Rental // Photo 20" aria-label="Enlarge rental photo 20"><img src="./NM-20.JPG" alt="Short-term rental photo 20" loading="lazy"></button><figcaption>Rental photo 20</figcaption></figure>
+            <figure class="art-card"><button class="project-image-trigger" type="button" data-image="./NM-21.JPG" data-caption="Short Term Rental // Photo 21" aria-label="Enlarge rental photo 21"><img src="./NM-21.JPG" alt="Short-term rental photo 21" loading="lazy"></button><figcaption>Rental photo 21</figcaption></figure>
+            <figure class="art-card"><button class="project-image-trigger" type="button" data-image="./NM-22.JPG" data-caption="Short Term Rental // Photo 22" aria-label="Enlarge rental photo 22"><img src="./NM-22.JPG" alt="Short-term rental photo 22" loading="lazy"></button><figcaption>Rental photo 22</figcaption></figure>
+            <figure class="art-card"><button class="project-image-trigger" type="button" data-image="./NM-23.JPG" data-caption="Short Term Rental // Photo 23" aria-label="Enlarge rental photo 23"><img src="./NM-23.JPG" alt="Short-term rental photo 23" loading="lazy"></button><figcaption>Rental photo 23</figcaption></figure>
+            <figure class="art-card"><button class="project-image-trigger" type="button" data-image="./NM-24.JPG" data-caption="Short Term Rental // Photo 24" aria-label="Enlarge rental photo 24"><img src="./NM-24.JPG" alt="Short-term rental photo 24" loading="lazy"></button><figcaption>Rental photo 24</figcaption></figure>
+            <figure class="art-card"><button class="project-image-trigger" type="button" data-image="./NM-25.JPG" data-caption="Short Term Rental // Photo 25" aria-label="Enlarge rental photo 25"><img src="./NM-25.JPG" alt="Short-term rental photo 25" loading="lazy"></button><figcaption>Rental photo 25</figcaption></figure>
+            <figure class="art-card"><button class="project-image-trigger" type="button" data-image="./NM-26.JPG" data-caption="Short Term Rental // Photo 26" aria-label="Enlarge rental photo 26"><img src="./NM-26.JPG" alt="Short-term rental photo 26" loading="lazy"></button><figcaption>Rental photo 26</figcaption></figure>
+            <figure class="art-card"><button class="project-image-trigger" type="button" data-image="./NM-27.JPG" data-caption="Short Term Rental // Photo 27" aria-label="Enlarge rental photo 27"><img src="./NM-27.JPG" alt="Short-term rental photo 27" loading="lazy"></button><figcaption>Rental photo 27</figcaption></figure>
+            <figure class="art-card"><button class="project-image-trigger" type="button" data-image="./NM-28.JPG" data-caption="Short Term Rental // Photo 28" aria-label="Enlarge rental photo 28"><img src="./NM-28.JPG" alt="Short-term rental photo 28" loading="lazy"></button><figcaption>Rental photo 28</figcaption></figure>
+            <figure class="art-card"><button class="project-image-trigger" type="button" data-image="./NM-29.JPG" data-caption="Short Term Rental // Photo 29" aria-label="Enlarge rental photo 29"><img src="./NM-29.JPG" alt="Short-term rental photo 29" loading="lazy"></button><figcaption>Rental photo 29</figcaption></figure>
+            <figure class="art-card"><button class="project-image-trigger" type="button" data-image="./NM-30.JPG" data-caption="Short Term Rental // Photo 30" aria-label="Enlarge rental photo 30"><img src="./NM-30.JPG" alt="Short-term rental photo 30" loading="lazy"></button><figcaption>Rental photo 30</figcaption></figure>
+            <figure class="art-card"><button class="project-image-trigger" type="button" data-image="./NM-31.JPG" data-caption="Short Term Rental // Photo 31" aria-label="Enlarge rental photo 31"><img src="./NM-31.JPG" alt="Short-term rental photo 31" loading="lazy"></button><figcaption>Rental photo 31</figcaption></figure>
+            <figure class="art-card"><button class="project-image-trigger" type="button" data-image="./NM-32.JPG" data-caption="Short Term Rental // Photo 32" aria-label="Enlarge rental photo 32"><img src="./NM-32.JPG" alt="Short-term rental photo 32" loading="lazy"></button><figcaption>Rental photo 32</figcaption></figure>
+            <figure class="art-card"><button class="project-image-trigger" type="button" data-image="./NM-33.JPG" data-caption="Short Term Rental // Photo 33" aria-label="Enlarge rental photo 33"><img src="./NM-33.JPG" alt="Short-term rental photo 33" loading="lazy"></button><figcaption>Rental photo 33</figcaption></figure>
+            <figure class="art-card"><button class="project-image-trigger" type="button" data-image="./NM-34.JPG" data-caption="Short Term Rental // Photo 34" aria-label="Enlarge rental photo 34"><img src="./NM-34.JPG" alt="Short-term rental photo 34" loading="lazy"></button><figcaption>Rental photo 34</figcaption></figure>
+            <figure class="art-card"><button class="project-image-trigger" type="button" data-image="./NM-35.JPG" data-caption="Short Term Rental // Photo 35" aria-label="Enlarge rental photo 35"><img src="./NM-35.JPG" alt="Short-term rental photo 35" loading="lazy"></button><figcaption>Rental photo 35</figcaption></figure>
+            <figure class="art-card"><button class="project-image-trigger" type="button" data-image="./NM-36.JPG" data-caption="Short Term Rental // Photo 36" aria-label="Enlarge rental photo 36"><img src="./NM-36.JPG" alt="Short-term rental photo 36" loading="lazy"></button><figcaption>Rental photo 36</figcaption></figure>
+            <figure class="art-card"><button class="project-image-trigger" type="button" data-image="./NM-37.JPG" data-caption="Short Term Rental // Photo 37" aria-label="Enlarge rental photo 37"><img src="./NM-37.JPG" alt="Short-term rental photo 37" loading="lazy"></button><figcaption>Rental photo 37</figcaption></figure>
+            <figure class="art-card"><button class="project-image-trigger" type="button" data-image="./NM-38.JPG" data-caption="Short Term Rental // Photo 38" aria-label="Enlarge rental photo 38"><img src="./NM-38.JPG" alt="Short-term rental photo 38" loading="lazy"></button><figcaption>Rental photo 38</figcaption></figure>
+            <figure class="art-card"><button class="project-image-trigger" type="button" data-image="./NM-39.JPG" data-caption="Short Term Rental // Photo 39" aria-label="Enlarge rental photo 39"><img src="./NM-39.JPG" alt="Short-term rental photo 39" loading="lazy"></button><figcaption>Rental photo 39</figcaption></figure>
+            <figure class="art-card"><button class="project-image-trigger" type="button" data-image="./NM-40.JPG" data-caption="Short Term Rental // Photo 40" aria-label="Enlarge rental photo 40"><img src="./NM-40.JPG" alt="Short-term rental photo 40" loading="lazy"></button><figcaption>Rental photo 40</figcaption></figure>
+            <figure class="art-card"><button class="project-image-trigger" type="button" data-image="./NM-41.JPG" data-caption="Short Term Rental // Photo 41" aria-label="Enlarge rental photo 41"><img src="./NM-41.JPG" alt="Short-term rental photo 41" loading="lazy"></button><figcaption>Rental photo 41</figcaption></figure>
+            <figure class="art-card"><button class="project-image-trigger" type="button" data-image="./NM-42.JPG" data-caption="Short Term Rental // Photo 42" aria-label="Enlarge rental photo 42"><img src="./NM-42.JPG" alt="Short-term rental photo 42" loading="lazy"></button><figcaption>Rental photo 42</figcaption></figure>
+            <figure class="art-card"><button class="project-image-trigger" type="button" data-image="./NM-43.JPG" data-caption="Short Term Rental // Photo 43" aria-label="Enlarge rental photo 43"><img src="./NM-43.JPG" alt="Short-term rental photo 43" loading="lazy"></button><figcaption>Rental photo 43</figcaption></figure>
+            <figure class="art-card"><button class="project-image-trigger" type="button" data-image="./NM-44.JPG" data-caption="Short Term Rental // Photo 44" aria-label="Enlarge rental photo 44"><img src="./NM-44.JPG" alt="Short-term rental photo 44" loading="lazy"></button><figcaption>Rental photo 44</figcaption></figure>
+            <figure class="art-card"><button class="project-image-trigger" type="button" data-image="./NM-45.JPG" data-caption="Short Term Rental // Photo 45" aria-label="Enlarge rental photo 45"><img src="./NM-45.JPG" alt="Short-term rental photo 45" loading="lazy"></button><figcaption>Rental photo 45</figcaption></figure>
+            <figure class="art-card"><button class="project-image-trigger" type="button" data-image="./NM-46.JPG" data-caption="Short Term Rental // Photo 46" aria-label="Enlarge rental photo 46"><img src="./NM-46.JPG" alt="Short-term rental photo 46" loading="lazy"></button><figcaption>Rental photo 46</figcaption></figure>
+            <figure class="art-card"><button class="project-image-trigger" type="button" data-image="./NM-47.JPG" data-caption="Short Term Rental // Photo 47" aria-label="Enlarge rental photo 47"><img src="./NM-47.JPG" alt="Short-term rental photo 47" loading="lazy"></button><figcaption>Rental photo 47</figcaption></figure>
+            <figure class="art-card"><button class="project-image-trigger" type="button" data-image="./NM-48.JPG" data-caption="Short Term Rental // Photo 48" aria-label="Enlarge rental photo 48"><img src="./NM-48.JPG" alt="Short-term rental photo 48" loading="lazy"></button><figcaption>Rental photo 48</figcaption></figure>
+            <figure class="art-card"><button class="project-image-trigger" type="button" data-image="./NM-49.JPG" data-caption="Short Term Rental // Photo 49" aria-label="Enlarge rental photo 49"><img src="./NM-49.JPG" alt="Short-term rental photo 49" loading="lazy"></button><figcaption>Rental photo 49</figcaption></figure>
+            <figure class="art-card"><button class="project-image-trigger" type="button" data-image="./NM-50.JPG" data-caption="Short Term Rental // Photo 50" aria-label="Enlarge rental photo 50"><img src="./NM-50.JPG" alt="Short-term rental photo 50" loading="lazy"></button><figcaption>Rental photo 50</figcaption></figure>
+          </div>
+        </div>
+      </details>
+      <details class="collection-folder" style="--collection-cover: url('./20250314_130903.jpg')">
+        <summary class="collection-folder-title"><span>Homey Haven<br>Home Off Home</span></summary>
+        <div class="collection-folder-content">
+          <div class="art-gallery">
+            <figure class="art-card"><button class="project-image-trigger" type="button" data-image="./20250314_130547.jpg" data-caption="Homey Haven // Photo 01" aria-label="Enlarge Homey Haven photo 1"><img src="./20250314_130547.jpg" alt="Homey Haven photo 1" loading="lazy"></button><figcaption>Homey Haven // Photo 01</figcaption></figure>
+            <figure class="art-card"><button class="project-image-trigger" type="button" data-image="./20250314_130903.jpg" data-caption="Homey Haven // Photo 02" aria-label="Enlarge Homey Haven photo 2"><img src="./20250314_130903.jpg" alt="Homey Haven photo 2" loading="lazy"></button><figcaption>Homey Haven // Photo 02</figcaption></figure>
+            <figure class="art-card"><button class="project-image-trigger" type="button" data-image="./20250314_131123.jpg" data-caption="Homey Haven // Photo 03" aria-label="Enlarge Homey Haven photo 3"><img src="./20250314_131123.jpg" alt="Homey Haven photo 3" loading="lazy"></button><figcaption>Homey Haven // Photo 03</figcaption></figure>
+            <figure class="art-card"><button class="project-image-trigger" type="button" data-image="./20250314_131338.jpg" data-caption="Homey Haven // Photo 04" aria-label="Enlarge Homey Haven photo 4"><img src="./20250314_131338.jpg" alt="Homey Haven photo 4" loading="lazy"></button><figcaption>Homey Haven // Photo 04</figcaption></figure>
+            <figure class="art-card"><button class="project-image-trigger" type="button" data-image="./20250314_131457.jpg" data-caption="Homey Haven // Photo 05" aria-label="Enlarge Homey Haven photo 5"><img src="./20250314_131457.jpg" alt="Homey Haven photo 5" loading="lazy"></button><figcaption>Homey Haven // Photo 05</figcaption></figure>
+            <figure class="art-card"><button class="project-image-trigger" type="button" data-image="./20250314_133212.jpg" data-caption="Homey Haven // Photo 06" aria-label="Enlarge Homey Haven photo 6"><img src="./20250314_133212.jpg" alt="Homey Haven photo 6" loading="lazy"></button><figcaption>Homey Haven // Photo 06</figcaption></figure>
+            <figure class="art-card"><button class="project-image-trigger" type="button" data-image="./20250314_133611.jpg" data-caption="Homey Haven // Photo 07" aria-label="Enlarge Homey Haven photo 7"><img src="./20250314_133611.jpg" alt="Homey Haven photo 7" loading="lazy"></button><figcaption>Homey Haven // Photo 07</figcaption></figure>
+          </div>
+        </div>
+      </details>
+    </section>
+
+    <section class="category-view" id="art-section-view" aria-labelledby="art-section-title" hidden="until-found">
+      <div class="category-view-heading">
+        <div><h2 id="art-section-title">Art Section</h2><p>Creative works &amp; drawing studies.</p></div>
+        <button class="category-view-close" type="button" data-close-category="art-section-view">Close view</button>
+      </div>
+      <details class="collection-folder" style="--collection-cover: url('./Protrait%201.jpg')">
+        <summary class="collection-folder-title"><span>Color Pencil</span></summary>
+        <div class="collection-folder-content">
+          <div class="art-gallery">
+            <figure class="art-card"><button class="project-image-trigger" type="button" data-image="./Protrait%201.jpg" data-caption="Color pencil study // 01" aria-label="Enlarge color pencil study 1"><img src="./Protrait%201.jpg" alt="Color pencil portrait study 1" loading="lazy"></button><figcaption>Color pencil study 01</figcaption></figure>
+            <figure class="art-card"><button class="project-image-trigger" type="button" data-image="./Protrait%202.jpg" data-caption="Color pencil study // 02" aria-label="Enlarge color pencil study 2"><img src="./Protrait%202.jpg" alt="Color pencil portrait study 2" loading="lazy"></button><figcaption>Color pencil study 02</figcaption></figure>
+            <figure class="art-card"><button class="project-image-trigger" type="button" data-image="./protrait%203.jpg" data-caption="Color pencil study // 03" aria-label="Enlarge color pencil study 3"><img src="./protrait%203.jpg" alt="Color pencil portrait study 3" loading="lazy"></button><figcaption>Color pencil study 03</figcaption></figure>
+            <figure class="art-card"><button class="project-image-trigger" type="button" data-image="./Protrait%204.jpg" data-caption="Color pencil study // 04" aria-label="Enlarge color pencil study 4"><img src="./Protrait%204.jpg" alt="Color pencil portrait study 4" loading="lazy"></button><figcaption>Color pencil study 04</figcaption></figure>
+            <figure class="art-card"><button class="project-image-trigger" type="button" data-image="./Protrait%205.jpg" data-caption="Color pencil study // 05" aria-label="Enlarge color pencil study 5"><img src="./Protrait%205.jpg" alt="Color pencil portrait study 5" loading="lazy"></button><figcaption>Color pencil study 05</figcaption></figure>
+            <figure class="art-card"><button class="project-image-trigger" type="button" data-image="./Protrait%206.jpg" data-caption="Color pencil study // 06" aria-label="Enlarge color pencil study 6"><img src="./Protrait%206.jpg" alt="Color pencil portrait study 6" loading="lazy"></button><figcaption>Color pencil study 06</figcaption></figure>
+            <figure class="art-card"><button class="project-image-trigger" type="button" data-image="./Protrait%207.jpg" data-caption="Color pencil study // 07" aria-label="Enlarge color pencil study 7"><img src="./Protrait%207.jpg" alt="Color pencil portrait study 7" loading="lazy"></button><figcaption>Color pencil study 07</figcaption></figure>
+            <figure class="art-card"><button class="project-image-trigger" type="button" data-image="./Protrait%208.jpg" data-caption="Color pencil study // 08" aria-label="Enlarge color pencil study 8"><img src="./Protrait%208.jpg" alt="Color pencil portrait study 8" loading="lazy"></button><figcaption>Color pencil study 08</figcaption></figure>
+            <figure class="art-card"><button class="project-image-trigger" type="button" data-image="./Protrait%209.jpg" data-caption="Color pencil study // 09" aria-label="Enlarge color pencil study 9"><img src="./Protrait%209.jpg" alt="Color pencil portrait study 9" loading="lazy"></button><figcaption>Color pencil study 09</figcaption></figure>
+            <figure class="art-card"><button class="project-image-trigger" type="button" data-image="./Protrait%2010.jpg" data-caption="Color pencil study // 10" aria-label="Enlarge color pencil study 10"><img src="./Protrait%2010.jpg" alt="Color pencil portrait study 10" loading="lazy"></button><figcaption>Color pencil study 10</figcaption></figure>
+          </div>
+        </div>
+      </details>
+      <details class="collection-folder" style="--collection-cover: url('./Pencil%20art%201.jpg')">
+        <summary class="collection-folder-title"><span>Grey Pencil</span></summary>
+        <div class="collection-folder-content">
+          <div class="art-gallery">
+            <figure class="art-card"><button class="project-image-trigger" type="button" data-image="./Pencil%20art%201.jpg" data-caption="Graphite study // 01" aria-label="Enlarge graphite study 1"><img src="./Pencil%20art%201.jpg" alt="Graphite drawing study 1" loading="lazy"></button><figcaption>Graphite study 01</figcaption></figure>
+            <figure class="art-card"><button class="project-image-trigger" type="button" data-image="./Pencil%20art%202.jpg" data-caption="Graphite study // 02" aria-label="Enlarge graphite study 2"><img src="./Pencil%20art%202.jpg" alt="Graphite drawing study 2" loading="lazy"></button><figcaption>Graphite study 02</figcaption></figure>
+            <figure class="art-card"><button class="project-image-trigger" type="button" data-image="./Pencil%20art%203.jpg" data-caption="Graphite study // 03" aria-label="Enlarge graphite study 3"><img src="./Pencil%20art%203.jpg" alt="Graphite drawing study 3" loading="lazy"></button><figcaption>Graphite study 03</figcaption></figure>
+            <figure class="art-card"><button class="project-image-trigger" type="button" data-image="./Pencil%20art%204.jpg" data-caption="Graphite study // 04" aria-label="Enlarge graphite study 4"><img src="./Pencil%20art%204.jpg" alt="Graphite drawing study 4" loading="lazy"></button><figcaption>Graphite study 04</figcaption></figure>
+            <figure class="art-card"><button class="project-image-trigger" type="button" data-image="./Pencil%20art%205.jpg" data-caption="Graphite study // 05" aria-label="Enlarge graphite study 5"><img src="./Pencil%20art%205.jpg" alt="Graphite drawing study 5" loading="lazy"></button><figcaption>Graphite study 05</figcaption></figure>
+            <figure class="art-card"><button class="project-image-trigger" type="button" data-image="./Pencil%20art%206.jpg" data-caption="Graphite study // 06" aria-label="Enlarge graphite study 6"><img src="./Pencil%20art%206.jpg" alt="Graphite drawing study 6" loading="lazy"></button><figcaption>Graphite study 06</figcaption></figure>
+          </div>
+        </div>
+      </details>
+      <details class="collection-folder" style="--collection-cover: url('https://picsum.photos/seed/art-auxiliary-studies/1200/700')">
+        <summary class="collection-folder-title"><span>Auxiliaries</span></summary>
+        <div class="collection-folder-content">
+          <p class="category-empty-state">Auxiliary art studies will appear here when their image files are added to this portfolio.</p>
+        </div>
+      </details>
+    </section>
+
+    <details class="architecture-disclosure" id="architecture-disclosure">
+      <summary aria-label="Architecture content" style="display: none;"></summary>
+      <button class="architecture-close-view" type="button">Close view</button>
+      <main>
+        <nav class="architecture-project-picker" aria-label="Architecture projects">
+          <button class="architecture-project-card" type="button" data-open-architecture-project="coffee-miller" style="--project-cover: url('./coffee%20miller%20-%20Render%201.jpg')"><span>Coffee Miller Complex</span></button>
+          <button class="architecture-project-card" type="button" data-open-architecture-project="mombasa" style="--project-cover: url('./A.08%20Swa%20Rend.jpg')"><span>Old Town Mombasa — Swahili Conservation</span></button>
+          <button class="architecture-project-card" type="button" data-open-architecture-project="project2" style="--project-cover: url('./A.11%20Affd-1.jpg')"><span>Affordable Housing Complex</span></button>
+          <button class="architecture-project-card" type="button" data-open-architecture-project="project3" style="--project-cover: url('./transit%20hotel%20project%20latest%20-%20Picture2-1.jpg')"><span>Transit Hotel &amp; Multimedia Hub</span></button>
+          <button class="architecture-project-card" type="button" data-open-architecture-project="project4" style="--project-cover: url('./Photo-1.jpg')"><span>From Isolation to Connection</span></button>
+        </nav>
+        <button class="architecture-project-back" type="button" hidden>Back to projects</button>
+
+        <section class="page-width archive-section project-two" id="coffee-miller" data-architecture-project="coffee-miller" aria-labelledby="coffee-miller-title">
+          <div class="project-two-overview">
+            <div class="project-two-copy">
+              <p class="project-tag">Industrial Architecture &amp; Agro-Processing <span>//</span> Featured Enterprise</p>
+              <h2 id="coffee-miller-title">Industrial Processing <span>Coffee Miller Complex</span></h2>
+              <p class="project-description">An advanced industrial processing plant designed for agro-industrial production. The project brings together processing, storage, and operational spaces with an emphasis on clear workflows and natural ventilation.</p>
+              <dl class="project-facts">
+                <div><dt>Category</dt><dd>Industrial Architecture &amp; Agro-Processing</dd></div>
+                <div><dt>Typology</dt><dd>Processing Plant &amp; Storage Silos</dd></div>
+                <div><dt>Structure</dt><dd>Steel Portal Frame &amp; Reinforced Slab</dd></div>
+              </dl>
+            </div>
+            <figure class="render-card project-two-hero">
+              <button class="project-image-trigger" type="button" data-image="./coffee%20miller%20-%20Render%201.jpg" data-caption="Coffee Miller Complex // Industrial massing perspective" aria-label="Enlarge Coffee Miller Complex hero render">
+                <img src="./coffee%20miller%20-%20Render%201.jpg" alt="Coffee Miller Complex industrial massing render" loading="eager">
+              </button>
+              <figcaption><span class="file-name">Coffee Miller — Render 1</span><span>Industrial massing perspective</span></figcaption>
+            </figure>
+          </div>
+
+          <div class="section-heading">
+            <div>
+              <h2>Visual Language</h2>
+              <p>Rendered views of the coffee-milling complex.</p>
+            </div>
+            <span class="section-index">Industrial // Renders</span>
+          </div>
+          <div class="render-gallery" aria-label="Coffee Miller render studies">
+            <figure class="render-card">
+              <button class="project-image-trigger" type="button" data-image="./coffee%20miller%20-%20Render%202.jpg" data-caption="Coffee Miller Complex // Render 2" aria-label="Enlarge Coffee Miller render 2">
+                <img src="./coffee%20miller%20-%20Render%202.jpg" alt="Coffee Miller Complex render 2" loading="lazy">
+              </button>
+              <figcaption><span class="file-name">Coffee Miller — Render 2</span><span>Architectural render</span></figcaption>
+            </figure>
+            <figure class="render-card">
+              <button class="project-image-trigger" type="button" data-image="./coffee%20miller%20-%20Render%203.jpg" data-caption="Coffee Miller Complex // Render 3" aria-label="Enlarge Coffee Miller render 3">
+                <img src="./coffee%20miller%20-%20Render%203.jpg" alt="Coffee Miller Complex render 3" loading="lazy">
+              </button>
+              <figcaption><span class="file-name">Coffee Miller — Render 3</span><span>Architectural render</span></figcaption>
+            </figure>
+            <figure class="render-card">
+              <button class="project-image-trigger" type="button" data-image="./coffee%20miller%20-%20Render%204.jpg" data-caption="Coffee Miller Complex // Render 4" aria-label="Enlarge Coffee Miller render 4">
+                <img src="./coffee%20miller%20-%20Render%204.jpg" alt="Coffee Miller Complex render 4" loading="lazy">
+              </button>
+              <figcaption><span class="file-name">Coffee Miller — Render 4</span><span>Architectural render</span></figcaption>
+            </figure>
+            <figure class="render-card">
+              <button class="project-image-trigger" type="button" data-image="./coffee%20miller%20-%20Render%205.jpg" data-caption="Coffee Miller Complex // Render 5" aria-label="Enlarge Coffee Miller render 5">
+                <img src="./coffee%20miller%20-%20Render%205.jpg" alt="Coffee Miller Complex render 5" loading="lazy">
+              </button>
+              <figcaption><span class="file-name">Coffee Miller — Render 5</span><span>Architectural render</span></figcaption>
+            </figure>
+          </div>
+
+          <div class="section-heading" style="margin-top: 3rem;">
+            <div>
+              <h2>Technical Blueprints</h2>
+              <p>Plans, layouts, elevations, and a section documenting the project.</p>
+            </div>
+            <span class="section-index">Industrial // Documentation</span>
+          </div>
+          <div class="blueprint-grid">
+            <article class="blueprint-card">
+              <button class="sheet-trigger" type="button" data-image="./coffee%20miller%20Ground%20Floor.jpg" data-caption="Coffee Miller Complex // Ground Floor Plan" aria-label="Enlarge Coffee Miller ground floor plan">
+                <img src="./coffee%20miller%20Ground%20Floor.jpg" alt="Coffee Miller Complex ground floor plan" loading="lazy">
+                <span class="enlarge-hint">View full sheet</span>
+              </button>
+              <div class="blueprint-caption"><p class="sheet-label">Technical Blueprints // Ground Floor</p><h3>Ground Floor Plan</h3><p>Ground-floor plan documenting the facility’s spatial arrangement.</p></div>
+            </article>
+            <article class="blueprint-card">
+              <button class="sheet-trigger" type="button" data-image="./coffee%20miller%20Layouts.jpg" data-caption="Coffee Miller Complex // Layouts" aria-label="Enlarge Coffee Miller layouts">
+                <img src="./coffee%20miller%20Layouts.jpg" alt="Coffee Miller Complex architectural layouts" loading="lazy">
+                <span class="enlarge-hint">View full sheet</span>
+              </button>
+              <div class="blueprint-caption"><p class="sheet-label">Technical Blueprints // Layouts</p><h3>Layouts</h3><p>Project layouts showing the planned organization of the complex.</p></div>
+            </article>
+            <article class="blueprint-card">
+              <button class="sheet-trigger" type="button" data-image="./coffee%20miller%20Elevations.jpg" data-caption="Coffee Miller Complex // Elevations" aria-label="Enlarge Coffee Miller elevations">
+                <img src="./coffee%20miller%20Elevations.jpg" alt="Coffee Miller Complex architectural elevations" loading="lazy">
+                <span class="enlarge-hint">View full sheet</span>
+              </button>
+              <div class="blueprint-caption"><p class="sheet-label">Technical Blueprints // Elevations</p><h3>Elevations</h3><p>Exterior elevations documenting the building’s architectural form.</p></div>
+            </article>
+            <article class="blueprint-card">
+              <button class="sheet-trigger" type="button" data-image="./coffee%20miller%20Section.jpg" data-caption="Coffee Miller Complex // Section" aria-label="Enlarge Coffee Miller section">
+                <img src="./coffee%20miller%20Section.jpg" alt="Coffee Miller Complex architectural section" loading="lazy">
+                <span class="enlarge-hint">View full sheet</span>
+              </button>
+              <div class="blueprint-caption"><p class="sheet-label">Technical Blueprints // Section</p><h3>Section</h3><p>Building section illustrating a cut through the project.</p></div>
+            </article>
+          </div>
+        </section>
+
+        <section class="overview page-width" id="overview" data-architecture-project="mombasa" aria-labelledby="project-title">
+          <div class="overview-copy">
+            <p class="project-tag">Project 01 <span>//</span> Cultural Heritage</p>
+            <h1 id="project-title">Old Town Mombasa <span>Swahili Conservation</span></h1>
+            <p class="project-description">A dialogue between historical preservation and contemporary urban life. This mixed-use cultural hub resurrects Swahili architectural DNA through massive coral masonry, intricate Mvule timber joinery, and breathable mashrabia screens.</p>
+            <dl class="project-facts">
+              <div><dt>Location</dt><dd>Sir Mearack St, Mombasa</dd></div>
+              <div><dt>Typology</dt><dd>Mixed-Use Cultural</dd></div>
+              <div><dt>Structure</dt><dd>Coral Block &amp; Timber</dd></div>
+            </dl>
+          </div>
+          <aside class="archive-stamp" aria-label="Project archive details">
+            <span class="stamp-label">Project archive</span>
+            <span class="stamp-number">01</span>
+            <span class="stamp-rule"></span>
+            <span class="stamp-caption">Old Town<br>Mombasa, Kenya</span>
+          </aside>
+        </section>
+
+        <section class="page-width archive-section" id="renders" data-architecture-project="mombasa" aria-labelledby="renders-title">
+          <div class="section-heading">
+            <div>
+              <h2 id="renders-title">Visual Language</h2>
+              <p>Exterior 3D massing, materiality, and urban lighting studies.</p>
+            </div>
+            <span class="section-index">01 // Renders</span>
+          </div>
+          <div class="render-gallery" aria-label="Architectural render studies">
+            <figure class="render-card">
+              <img src="./A.04%20SWa%20Rend.jpg" alt="Architectural render showing the roof terrace framing" loading="lazy">
+              <figcaption><span class="file-name">A.04 SWa Rend.jpg</span><span>Roof terrace framing</span></figcaption>
+            </figure>
+            <figure class="render-card">
+              <img src="./A.05%20Swa%20Rend.jpg" alt="Architectural render showing the facade and balustrades" loading="lazy">
+              <figcaption><span class="file-name">A.05 Swa Rend.jpg</span><span>Facade &amp; balustrades</span></figcaption>
+            </figure>
+            <figure class="render-card">
+              <img src="./A.06%20Swa%20Rend.jpg" alt="Architectural render showing the rooftop and corner detail" loading="lazy">
+              <figcaption><span class="file-name">A.06 Swa Rend.jpg</span><span>Rooftop &amp; corner detail</span></figcaption>
+            </figure>
+            <figure class="render-card">
+              <img src="./A.07%20Swa%20Rend.jpg" alt="Architectural render showing the streetscape context" loading="lazy">
+              <figcaption><span class="file-name">A.07 Swa Rend.jpg</span><span>Streetscape context</span></figcaption>
+            </figure>
+            <figure class="render-card">
+              <img src="./A.08%20Swa%20Rend.jpg" alt="Street-view hero perspective of the Mombasa project" loading="lazy">
+              <figcaption><span class="file-name">A.08 Swa Rend.jpg</span><span>Hero perspective // street view</span></figcaption>
+            </figure>
+            <figure class="render-card">
+              <img src="./A.09%20Swa%20Rend.jpg" alt="Aerial architectural render showing the project massing" loading="lazy">
+              <figcaption><span class="file-name">A.09 Swa Rend.jpg</span><span>Aerial massing study</span></figcaption>
+            </figure>
+            <figure class="render-card">
+              <img src="./A.10%20Swa%20Rend.jpg" alt="Architectural render showing the screen wall detail" loading="lazy">
+              <figcaption><span class="file-name">A.10 Swa Rend.jpg</span><span>Screen wall detail</span></figcaption>
+            </figure>
+          </div>
+        </section>
+
+        <section class="page-width archive-section blueprints" id="drawings" data-architecture-project="mombasa" aria-labelledby="drawings-title">
+          <div class="section-heading">
+            <div>
+              <h2 id="drawings-title">Technical Blueprints</h2>
+              <p>Spatial layouts, floor zoning, and architectural elevations.</p>
+            </div>
+            <span class="section-index">02 // Documentation</span>
+          </div>
+          <div class="blueprint-grid">
+            <article class="blueprint-card">
+              <button class="sheet-trigger" type="button" data-image="./A.03.1%20Swahili%202.jpg" data-caption="Ground Floor Plan &amp; Roof Plan with complete structural notes and material schedules." aria-label="Enlarge sheet A.03.1, Ground Floor and Roof Plans">
+                <img src="./A.03.1%20Swahili%202.jpg" alt="Architectural drawing sheet A.03.1, Ground Floor and Roof Plans" loading="lazy">
+                <span class="enlarge-hint">View full sheet</span>
+              </button>
+              <div class="blueprint-caption">
+                <p class="sheet-label">Sheet A.01 // Plans</p>
+                <h3>Ground Floor &amp; Roof Plans</h3>
+                <p>Active retail frontage, mini-matt, management suites, and roof drainage layout.</p>
+              </div>
+            </article>
+            <article class="blueprint-card">
+              <button class="sheet-trigger" type="button" data-image="./A.03.2%20Swahili%203.jpg" data-caption="First &amp; Second Floor Plans paired with Elevations 2 &amp; 4." aria-label="Enlarge sheet A.03.2, Upper Floors and Elevations 2 and 4">
+                <img src="./A.03.2%20Swahili%203.jpg" alt="Architectural drawing sheet A.03.2, Upper Floors and Elevations 2 and 4" loading="lazy">
+                <span class="enlarge-hint">View full sheet</span>
+              </button>
+              <div class="blueprint-caption">
+                <p class="sheet-label">Sheet A.02 // Plans &amp; Elevations</p>
+                <h3>Upper Floors &amp; Elevations 2 &amp; 4</h3>
+                <p>Restaurant zoning, residential studios, relaxation rooms, and side elevations.</p>
+              </div>
+            </article>
+            <article class="blueprint-card">
+              <button class="sheet-trigger" type="button" data-image="./A.03.3%20Swahili%204.jpg" data-caption="Elevation 1 (Main Entrance) and Elevation 3 detailing masonry and timber work." aria-label="Enlarge sheet A.03.3, Main Elevations 1 and 3">
+                <img src="./A.03.3%20Swahili%204.jpg" alt="Architectural drawing sheet A.03.3, Main Elevations 1 and 3" loading="lazy">
+                <span class="enlarge-hint">View full sheet</span>
+              </button>
+              <div class="blueprint-caption">
+                <p class="sheet-label">Sheet A.03 // Elevations</p>
+                <h3>Main Elevations 1 &amp; 3</h3>
+                <p>Detailed facade articulation, decorative stucco, Mvule joinery, and fenestration grid.</p>
+              </div>
+            </article>
+          </div>
+        </section>
+
+        <section class="page-width archive-section project-two" id="project2" data-architecture-project="project2" aria-labelledby="project2-title">
+          <div class="project-two-overview">
+            <div class="project-two-copy">
+              <p class="project-tag">Project 02 <span>//</span> Residential Community &amp; Urban Scale</p>
+              <h2 id="project2-title">Urban Community Living <span>Affordable Housing Complex</span></h2>
+              <p class="project-description">A high-density, community-centric housing typology designed for scalability and dignity. This 1-acre masterplan integrates multi-family residences around active central courtyards, ground-level retail spaces, and secure communal playgrounds.</p>
+              <dl class="project-facts">
+                <div><dt>Site Area</dt><dd>1 Acre Masterplan</dd></div>
+                <div><dt>Typology</dt><dd>Multi-Family Residential</dd></div>
+                <div><dt>Structure</dt><dd>Prefab EPS Panels &amp; RC</dd></div>
+              </dl>
+            </div>
+            <figure class="render-card project-two-hero">
+              <button class="project-image-trigger" type="button" data-image="./A.11%20Affd-1.jpg" data-caption="Aerial perspective // 1 acre masterplan" aria-label="Enlarge Affordable Housing aerial perspective">
+                <img src="./A.11%20Affd-1.jpg" alt="Affordable Housing aerial perspective showing the 1-acre masterplan" loading="lazy">
+              </button>
+              <figcaption><span class="file-name">A.11 Affd-1.jpg</span><span>Aerial perspective // 1 acre masterplan</span></figcaption>
+            </figure>
+          </div>
+
+          <div class="section-heading">
+            <div>
+              <h2>Technical Blueprints</h2>
+              <p>Floor plans, elevations, and structural sections documenting the affordable housing masterplan.</p>
+            </div>
+            <span class="section-index">02 // Affordable Housing</span>
+          </div>
+          <div class="render-gallery project-two-gallery" aria-label="Affordable Housing visual and technical archive">
+            <figure class="render-card">
+              <button class="project-image-trigger" type="button" data-image="./A.12%20Affd-1tt.jpg" data-caption="Side perspective showcasing block massing and roadside integration." aria-label="Enlarge side view perspective">
+                <img src="./A.12%20Affd-1tt.jpg" alt="Affordable Housing side view perspective" loading="lazy">
+              </button>
+              <figcaption><span class="file-name">A.12 Affd-1tt.jpg</span><span>Side view perspective</span></figcaption>
+            </figure>
+            <figure class="render-card">
+              <button class="project-image-trigger" type="button" data-image="./A.13%20Affd-1.jpg" data-caption="Inner courtyard perspective highlighting balconies, lighting, and communal walkways." aria-label="Enlarge inner courtyard perspective">
+                <img src="./A.13%20Affd-1.jpg" alt="Affordable Housing inner courtyard perspective" loading="lazy">
+              </button>
+              <figcaption><span class="file-name">A.13 Affd-1.jpg</span><span>Inner courtyard perspective</span></figcaption>
+            </figure>
+            <figure class="render-card">
+              <button class="project-image-trigger" type="button" data-image="./A.14%20Affd-1.jpg" data-caption="Ground floor plan detailing courtyards, parking, retail spaces, and playground." aria-label="Enlarge ground floor and masterplan">
+                <img class="project-plan-image" src="./A.14%20Affd-1.jpg" alt="Affordable Housing ground floor and masterplan" loading="lazy">
+              </button>
+              <figcaption><span class="file-name">A.14 Affd-1.jpg</span><span>Ground floor &amp; masterplan</span></figcaption>
+            </figure>
+            <figure class="render-card">
+              <button class="project-image-trigger" type="button" data-image="./A.15%20Affd-1.jpg" data-caption="Typical floor plan showing studio, 1, 2, and 3-bedroom unit arrangements." aria-label="Enlarge first and second floor zoning plan">
+                <img class="project-plan-image" src="./A.15%20Affd-1.jpg" alt="Affordable Housing first and second floor zoning plan" loading="lazy">
+              </button>
+              <figcaption><span class="file-name">A.15 Affd-1.jpg</span><span>1st &amp; 2nd floor zoning plan</span></figcaption>
+            </figure>
+            <figure class="render-card">
+              <button class="project-image-trigger" type="button" data-image="./A.16%20Affd-1.jpg" data-caption="Elevations detailing fenestration and structural grid." aria-label="Enlarge architectural elevations">
+                <img class="project-plan-image" src="./A.16%20Affd-1.jpg" alt="Affordable Housing architectural elevations" loading="lazy">
+              </button>
+              <figcaption><span class="file-name">A.16 Affd-1.jpg</span><span>Elevations schedule</span></figcaption>
+            </figure>
+            <figure class="render-card">
+              <button class="project-image-trigger" type="button" data-image="./A.17%20Affd-1.jpg" data-caption="Sections illustrating vertical circulation and prefab panels." aria-label="Enlarge structural sections">
+                <img class="project-plan-image" src="./A.17%20Affd-1.jpg" alt="Affordable Housing structural sections" loading="lazy">
+              </button>
+              <figcaption><span class="file-name">A.17 Affd-1.jpg</span><span>Structural sections</span></figcaption>
+            </figure>
+          </div>
+
+          <div class="section-heading" style="margin-top: 3rem;">
+            <div>
+              <h2>Technical Blueprints</h2>
+              <p>Floor plans, elevations, and a building section for the affordable housing project.</p>
+            </div>
+          </div>
+          <div class="blueprint-grid">
+            <article class="blueprint-card">
+              <button class="sheet-trigger" type="button" data-image="./Ground%20Floor%20color%20Tagless-1.jpg" data-caption="Ground floor color plan." aria-label="Enlarge Ground Floor color plan">
+                <img src="./Ground%20Floor%20color%20Tagless-1.jpg" alt="Ground Floor color plan drawing" loading="lazy">
+                <span class="enlarge-hint">View full sheet</span>
+              </button>
+              <div class="blueprint-caption">
+                <p class="sheet-label">Ground Floor Plan // Tagless</p>
+                <h3>Ground Floor Plan</h3>
+                <p>Color-coded ground-floor layout showing how spaces are arranged across the building.</p>
+              </div>
+            </article>
+            <article class="blueprint-card">
+              <button class="sheet-trigger" type="button" data-image="./1ST%202ND%20FLOOR%20tagless-1.jpg" data-caption="First and second floor plan drawing." aria-label="Enlarge First and Second Floor plans">
+                <img src="./1ST%202ND%20FLOOR%20tagless-1.jpg" alt="First and second floor plan drawing" loading="lazy">
+                <span class="enlarge-hint">View full sheet</span>
+              </button>
+              <div class="blueprint-caption">
+                <p class="sheet-label">First &amp; Second Floors // Tagless</p>
+                <h3>First &amp; Second Floor Plans</h3>
+                <p>First- and second-floor plans showing the layout of the upper levels.</p>
+              </div>
+            </article>
+            <article class="blueprint-card">
+              <button class="sheet-trigger" type="button" data-image="./ELEVATION%201%20Tagless-1.jpg" data-caption="Elevation 1 architectural drawing." aria-label="Enlarge Elevation 1 drawing">
+                <img src="./ELEVATION%201%20Tagless-1.jpg" alt="Elevation 1 architectural drawing" loading="lazy">
+                <span class="enlarge-hint">View full sheet</span>
+              </button>
+              <div class="blueprint-caption">
+                <p class="sheet-label">Elevation 1 // Tagless</p>
+                <h3>Elevation 1</h3>
+                <p>Exterior elevation documenting the building’s facade and vertical arrangement.</p>
+              </div>
+            </article>
+            <article class="blueprint-card">
+              <button class="sheet-trigger" type="button" data-image="./ELEVATION%202%20Tagless-1.jpg" data-caption="Elevation 2 architectural drawing." aria-label="Enlarge Elevation 2 drawing">
+                <img src="./ELEVATION%202%20Tagless-1.jpg" alt="Elevation 2 architectural drawing" loading="lazy">
+                <span class="enlarge-hint">View full sheet</span>
+              </button>
+              <div class="blueprint-caption">
+                <p class="sheet-label">Elevation 2 // Tagless</p>
+                <h3>Elevation 2</h3>
+                <p>Exterior elevation documenting the building’s facade and vertical arrangement.</p>
+              </div>
+            </article>
+            <article class="blueprint-card">
+              <button class="sheet-trigger" type="button" data-image="./ELEVATION%203%20Tagless-1.jpg" data-caption="Elevation 3 architectural drawing." aria-label="Enlarge Elevation 3 drawing">
+                <img src="./ELEVATION%203%20Tagless-1.jpg" alt="Elevation 3 architectural drawing" loading="lazy">
+                <span class="enlarge-hint">View full sheet</span>
+              </button>
+              <div class="blueprint-caption">
+                <p class="sheet-label">Elevation 3 // Tagless</p>
+                <h3>Elevation 3</h3>
+                <p>Exterior elevation documenting the building’s facade and vertical arrangement.</p>
+              </div>
+            </article>
+            <article class="blueprint-card">
+              <button class="sheet-trigger" type="button" data-image="./SECTION%20Tagless-1.jpg" data-caption="Architectural section drawing." aria-label="Enlarge section drawing">
+                <img src="./SECTION%20Tagless-1.jpg" alt="Architectural section drawing" loading="lazy">
+                <span class="enlarge-hint">View full sheet</span>
+              </button>
+              <div class="blueprint-caption">
+                <p class="sheet-label">Section // Tagless</p>
+                <h3>Section</h3>
+                <p>Building section showing a cut through the structure and its interior levels.</p>
+              </div>
+            </article>
+          </div>
+        </section>
+
+        <section class="page-width archive-section project-two" id="project3" data-architecture-project="project3" aria-labelledby="project3-title">
+          <div class="project-two-overview">
+            <div class="project-two-copy">
+              <p class="project-tag">Project 03 <span>//</span> Hospitality, Transit &amp; Media Infrastructure</p>
+              <h2 id="project3-title">Dynamic Transit Node <span>Transit Hotel &amp; Multimedia Hub</span></h2>
+              <p class="project-description">A multi-functional complex for transient travelers and digital creators, combining hotel accommodation, transit access, and multimedia facilities.</p>
+              <dl class="project-facts">
+                <div><dt>Typology</dt><dd>Transit Hotel &amp; Media Hub</dd></div>
+                <div><dt>Amenities</dt><dd>Pool, Auditorium &amp; Suites</dd></div>
+                <div><dt>Structure</dt><dd>Curtain Wall &amp; Concrete Vaults</dd></div>
+              </dl>
+            </div>
+            <figure class="render-card project-two-hero">
+              <button class="project-image-trigger" type="button" data-image="./transit%20hotel%20project%20latest%20-%20Picture2-1.jpg" data-caption="Front perspective showing the transit hotel and approach." aria-label="Enlarge transit hotel front perspective">
+                <img src="./transit%20hotel%20project%20latest%20-%20Picture2-1.jpg" alt="Transit hotel front perspective" loading="lazy">
+              </button>
+              <figcaption><span class="file-name">Transit Hotel</span><span>Front perspective // transit approach</span></figcaption>
+            </figure>
+          </div>
+
+          <div class="section-heading">
+            <div>
+              <h2>Visual Language</h2>
+              <p>Exterior perspectives showing leisure areas and the building at dusk.</p>
+            </div>
+            <span class="section-index">03 // Renders</span>
+          </div>
+          <div class="render-gallery project-two-gallery" aria-label="Transit Hotel visual studies">
+            <figure class="render-card">
+              <button class="project-image-trigger" type="button" data-image="./transit%20hotel%20project%20latest%20-%20Picture1-1.jpg" data-caption="Poolside and leisure deck perspective." aria-label="Enlarge poolside and leisure deck perspective">
+                <img src="./transit%20hotel%20project%20latest%20-%20Picture1-1.jpg" alt="Poolside leisure deck perspective" loading="lazy">
+              </button>
+              <figcaption><span class="file-name">Poolside &amp; Leisure Deck</span><span>Outdoor recreation perspective</span></figcaption>
+            </figure>
+            <figure class="render-card">
+              <button class="project-image-trigger" type="button" data-image="./transit%20hotel%20project%20latest%20-%20Picture3%20-%20Picture3-1.jpg" data-caption="Dusk perspective showing the building and service access." aria-label="Enlarge dusk perspective">
+                <img src="./transit%20hotel%20project%20latest%20-%20Picture3%20-%20Picture3-1.jpg" alt="Transit hotel dusk perspective" loading="lazy">
+              </button>
+              <figcaption><span class="file-name">Dusk &amp; Service Zone</span><span>Evening perspective</span></figcaption>
+            </figure>
+          </div>
+
+          <div class="section-heading" style="margin-top: 3rem;">
+            <div>
+              <h2>Technical Blueprints</h2>
+              <p>Floor plans, roof layout, sections, and elevations documenting the project.</p>
+            </div>
+            <span class="section-index">03 // Documentation</span>
+          </div>
+          <div class="blueprint-grid">
+            <article class="blueprint-card">
+              <button class="sheet-trigger" type="button" data-image="./transit%20hotel%20project%20latest%20plan-1.jpg" data-caption="Ground floor and site plan." aria-label="Enlarge ground floor and site plan">
+                <img src="./transit%20hotel%20project%20latest%20plan-1.jpg" alt="Transit hotel ground floor and site plan" loading="lazy">
+                <span class="enlarge-hint">View full sheet</span>
+              </button>
+              <div class="blueprint-caption"><p class="sheet-label">Ground Floor // Site Plan</p><h3>Ground Floor &amp; Site Plan</h3><p>Site layout showing the ground-level arrangement and surrounding access.</p></div>
+            </article>
+            <article class="blueprint-card">
+              <button class="sheet-trigger" type="button" data-image="./transit%20hotel%20project%20latest%201floor-1.jpg" data-caption="First floor plan." aria-label="Enlarge first floor plan">
+                <img src="./transit%20hotel%20project%20latest%201floor-1.jpg" alt="Transit hotel first floor plan" loading="lazy">
+                <span class="enlarge-hint">View full sheet</span>
+              </button>
+              <div class="blueprint-caption"><p class="sheet-label">Floor Plan // Level 01</p><h3>First Floor Plan</h3><p>First-floor layout for the project’s multimedia and shared spaces.</p></div>
+            </article>
+            <article class="blueprint-card">
+              <button class="sheet-trigger" type="button" data-image="./transit%20hotel%20project%20latest%202floor-1.jpg" data-caption="Second floor plan." aria-label="Enlarge second floor plan">
+                <img src="./transit%20hotel%20project%20latest%202floor-1.jpg" alt="Transit hotel second floor plan" loading="lazy">
+                <span class="enlarge-hint">View full sheet</span>
+              </button>
+              <div class="blueprint-caption"><p class="sheet-label">Floor Plan // Level 02</p><h3>Second Floor Plan</h3><p>Second-floor accommodation layout.</p></div>
+            </article>
+            <article class="blueprint-card">
+              <button class="sheet-trigger" type="button" data-image="./transit%20hotel%20project%20latest%203%20floor-1.jpg" data-caption="Third floor plan." aria-label="Enlarge third floor plan">
+                <img src="./transit%20hotel%20project%20latest%203%20floor-1.jpg" alt="Transit hotel third floor plan" loading="lazy">
+                <span class="enlarge-hint">View full sheet</span>
+              </button>
+              <div class="blueprint-caption"><p class="sheet-label">Floor Plan // Level 03</p><h3>Third Floor Plan</h3><p>Upper-level layout for the hotel accommodation floors.</p></div>
+            </article>
+            <article class="blueprint-card">
+              <button class="sheet-
