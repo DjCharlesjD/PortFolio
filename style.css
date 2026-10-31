@@ -1269,3 +1269,12 @@ body[data-active-main-category="art-section-view"] .architecture-tag {
   position: relative;
   z-index: 5;
 }
+
+/* KEEP PAGE STRUCTURE AND SURROUNDING CONTENT STATIONARY */
+.render-card:hover,
+.blueprint-card:hover,
+.launch-card:hover,
+.architecture-project-card:hover,
+.collection-folder-title:hover {
+  transform: none;
+}
