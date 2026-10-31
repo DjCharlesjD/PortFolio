@@ -1256,23 +1256,16 @@ body[data-active-main-category="art-section-view"] .architecture-tag {
   }
 }
 
-/* IMAGE-ONLY HOVER ZOOM */
-.project-image-trigger,
-.sheet-trigger {
-  overflow: visible;
-  position: relative;
-}
-
-.project-image-trigger img,
-.sheet-trigger img {
-  display: block;
+/* GALLERY PHOTOS ONLY — HOVER ZOOM */
+.render-gallery .project-image-trigger img,
+.art-gallery .project-image-trigger img {
   transition: transform 0.3s ease;
   transform-origin: center center;
 }
 
-.project-image-trigger:hover img,
-.sheet-trigger:hover img {
-  transform: scale(1.15);
+.render-gallery .project-image-trigger:hover img,
+.art-gallery .project-image-trigger:hover img {
+  transform: scale(1.08);
   position: relative;
-  z-index: 10;
+  z-index: 5;
 }
