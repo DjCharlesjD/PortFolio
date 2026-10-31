@@ -23,6 +23,7 @@ function closeMainCategories() {
 }
 
 function openMainCategory(category) {
+  history.pushState({ ...(history.state || {}), portfolioNavigation: 'category', category }, '', window.location.href);
   closeMainCategories();
   activeMainCategory = category;
 
@@ -126,6 +127,24 @@ window.addEventListener('keydown', (event) => {
 
   if (event.key === 'Escape' && activeMainCategory) {
     closeMainCategories();
+  }
+});
+
+window.addEventListener('popstate', () => {
+  // The phone/browser Back action follows the portfolio's visible navigation.
+  if (viewer?.open) {
+    viewer.close();
+    return;
+  }
+  const selectedProject = architectureProjectSections.find((section) => !section.hidden);
+  if (selectedProject) {
+    showArchitectureProjectPicker();
+    architectureProjectPicker?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    return;
+  }
+  if (activeMainCategory) {
+    closeMainCategories();
+    window.scrollTo({ top: 0, behavior: 'smooth' });
   }
 });
 
@@ -432,6 +451,7 @@ for (const button of document.querySelectorAll(
   button.addEventListener('click', () => {
     const projId = button.dataset.openArchitectureProject;
 
+    history.pushState({ ...(history.state || {}), portfolioNavigation: 'project', projectId: projId }, '', window.location.href);
     showArchitectureProject(projId);
 
     document.getElementById(projId === 'mombasa' ? 'overview' : projId)
@@ -440,12 +460,12 @@ for (const button of document.querySelectorAll(
 }
 
 architectureProjectBack?.addEventListener('click', () => {
+  if (history.state?.portfolioNavigation === 'project') {
+    history.back();
+    return;
+  }
   showArchitectureProjectPicker();
-
-  architectureProjectPicker?.scrollIntoView({
-    behavior: 'smooth',
-    block: 'start'
-  });
+  architectureProjectPicker?.scrollIntoView({ behavior: 'smooth', block: 'start' });
 });
 
 showArchitectureProjectPicker();
