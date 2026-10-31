@@ -1320,3 +1320,28 @@ body[data-active-main-category="art-section-view"] .architecture-tag {
 .image-viewer[open] {
   overscroll-behavior: contain;
 }
+
+/* MOBILE NAVIGATION: improve reach and touch targets without changing page content. */
+@media (max-width: 600px) {
+  .category-close-control {
+    top: auto;
+    right: 1rem;
+    bottom: max(1rem, env(safe-area-inset-bottom));
+    width: 3.25rem;
+    height: 3.25rem;
+    border-radius: 50%;
+    box-shadow: 0 0.35rem 1.2rem oklch(0.04 0.004 35 / 0.55);
+  }
+  .architecture-project-back,
+  .category-view-close,
+  .architecture-close-view {
+    min-height: 2.75rem;
+    padding: 0.7rem 1rem;
+  }
+  .architecture-project-back {
+    position: sticky;
+    top: 5.5rem;
+    z-index: 4;
+    margin-left: auto;
+  }
+}
