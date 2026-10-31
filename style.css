@@ -1255,3 +1255,24 @@ body[data-active-main-category="art-section-view"] .architecture-tag {
     width: 100%;
   }
 }
+
+/* IMAGE-ONLY HOVER ZOOM */
+.project-image-trigger,
+.sheet-trigger {
+  overflow: visible;
+  position: relative;
+}
+
+.project-image-trigger img,
+.sheet-trigger img {
+  display: block;
+  transition: transform 0.3s ease;
+  transform-origin: center center;
+}
+
+.project-image-trigger:hover img,
+.sheet-trigger:hover img {
+  transform: scale(1.15);
+  position: relative;
+  z-index: 10;
+}
