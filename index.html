@@ -11,28 +11,12 @@
     <link rel="stylesheet" href="./style.css">
     <script src="./script.js" defer></script>
   </head>
-  <body id="top">
+  <body>
     <header class="site-header">
-      <a class="wordmark hoh-wordmark" href="#top" aria-label="HoH portfolio home">HoH</a>
-      <span class="header-note">// Architectural Portfolio</span>
-      <button class="site-menu-toggle" type="button" aria-expanded="false" aria-controls="site-menu" aria-label="Open menu"><span></span><span></span><span></span></button>
-      <nav class="site-menu" id="site-menu" aria-label="Main menu" hidden>
-        <a href="#top" data-menu-close>Home</a>
-        <button type="button" data-menu-action="projects">Projects</button>
-        <button type="button" data-menu-action="about">About</button>
-        <a href="mailto:charlesdave635@gmail.com" data-menu-close>Contact</a>
-        <button type="button" data-menu-action="art">Art &amp; Design</button>
-        <button type="button" data-menu-action="publications">Publications</button>
-      </nav>
+      <a class="wordmark" href="#overview" aria-label="Portfolio home">Portfolio</a>
+      <span class="header-note">// Architectural Archive</span>
     </header>
-    <dialog class="about-dialog" id="about-dialog" aria-labelledby="about-dialog-title">
-      <button class="about-dialog-close" type="button" aria-label="Close about panel">&times;</button>
-      <p class="project-tag">HoH <span>//</span> About</p>
-      <h2 id="about-dialog-title">David Charles Juma</h2>
-      <p>Architectural designer with a background in Architectural Studies and Architectural Technology. This portfolio brings together architectural design, spatial exploration, visual communication and research.</p>
-      <p>Areas of interest include architectural design, interior environments, sustainable and communal housing, digital visualisation and creative arts.</p>
-      <p class="about-dialog-contact"><a href="mailto:charlesdave635@gmail.com">charlesdave635@gmail.com</a></p>
-    </dialog>
+
 
     <section class="portfolio-launchpad" aria-label="Portfolio categories">
       <button class="launch-card launch-card-architecture" data-main-category="architecture" type="button" onclick="const section = document.getElementById('architecture-disclosure'); section.open = true; section.scrollIntoView({ behavior: 'smooth', block: 'start' });">
@@ -1017,10 +1001,7 @@
 
     <dialog class="image-viewer" aria-label="Enlarged architectural drawing">
       <button class="viewer-close" type="button" aria-label="Close enlarged drawing">&times;</button>
-      <div class="viewer-image-frame">
-        <img class="viewer-image" src="" alt="">
-        <span class="viewer-hoh-mark" aria-hidden="true">HoH</span>
-      </div>
+      <img class="viewer-image" src="" alt="">
       <p class="viewer-caption"></p>
       <p class="viewer-help">Press Escape or select close to return to the portfolio.</p>
     </dialog>
