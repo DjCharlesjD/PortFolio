@@ -168,8 +168,8 @@ let dragOriginY = 0;
 function updateViewerImage() {
   if (!viewerImage) return;
 
-  const viewerFrame = document.querySelector('.viewer-image-frame');
-  (viewerFrame || viewerImage).style.transform = `translate3d(${imagePanX}px, ${imagePanY}px, 0) scale(${imageZoom})`;
+  viewerImage.style.transform =
+    `translate3d(${imagePanX}px, ${imagePanY}px, 0) scale(${imageZoom})`;
 
   viewerImage.style.cursor = imageZoom > 1 ? 'grab' : 'zoom-in';
 }
