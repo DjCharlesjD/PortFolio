@@ -510,7 +510,21 @@ siteMenu?.addEventListener('click',event=>{
 aboutDialogClose?.addEventListener('click',()=>aboutDialog?.close());
 aboutDialog?.addEventListener('click',event=>{if(event.target===aboutDialog)aboutDialog.close()});
 document.addEventListener('keydown',event=>{if(event.key==='Escape')closeSiteMenu()});
-function applyHoHWatermarks(root=document){root.querySelectorAll('.render-card:not(.project-two-hero),.art-card,.blueprint-card').forEach(card=>{if(card.querySelector('img'))card.classList.add('hoh-watermarked')})}
+function applyHoHWatermarks(root=document){
+  root.querySelectorAll('.render-card:not(.project-two-hero) .project-image-trigger, .art-card .project-image-trigger, .blueprint-card .sheet-trigger').forEach(trigger=>{
+    if(!trigger.querySelector('.hoh-watermark') && trigger.querySelector('img')){
+      const mark=document.createElement('span');
+      mark.className='hoh-watermark';
+      mark.textContent='HoH';
+      mark.setAttribute('aria-hidden','true');
+      trigger.appendChild(mark);
+    }
+  });
+}
 applyHoHWatermarks();
-const hohWatermarkObserver=new MutationObserver(records=>{for(const record of records){for(const node of record.addedNodes){if(node.nodeType===1){if(node.matches?.('.render-card,.art-card,.blueprint-card'))applyHoHWatermarks(node.parentElement||document);else applyHoHWatermarks(node)}}}});
+const hohWatermarkObserver=new MutationObserver(records=>{
+  for(const record of records) for(const node of record.addedNodes){
+    if(node.nodeType===1) applyHoHWatermarks(node);
+  }
+});
 hohWatermarkObserver.observe(document.body,{childList:true,subtree:true});
