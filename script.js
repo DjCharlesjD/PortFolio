@@ -170,7 +170,8 @@ let dragOriginY = 0;
 function updateViewerImage() {
   if (!viewerImage) return;
 
-  viewerImage.style.transform =
+  const transformTarget = viewerImageFrame || viewerImage;
+  transformTarget.style.transform =
     `translate3d(${imagePanX}px, ${imagePanY}px, 0) scale(${imageZoom})`;
 
   viewerImage.style.cursor = imageZoom > 1 ? 'grab' : 'zoom-in';
