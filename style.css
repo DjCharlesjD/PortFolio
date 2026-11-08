@@ -1347,57 +1347,8 @@ body[data-active-main-category="art-section-view"] .architecture-tag {
 }
 
 
-/* HoH identity: discreet, colourless watermark on secondary portfolio images. */
-.render-card.hoh-watermarked,.art-card.hoh-watermarked,.blueprint-card.hoh-watermarked{position:relative}
-.render-card.hoh-watermarked::after,.art-card.hoh-watermarked::after,.blueprint-card.hoh-watermarked::after{
- content:"HoH";position:absolute;top:.65rem;right:.65rem;z-index:8;padding:.18rem .48rem .22rem;
- border:1px solid rgba(255,255,255,.22);border-radius:2px;background:rgba(255,255,255,.10);
- color:rgba(255,255,255,.58);font-family:Georgia,"Times New Roman",serif;font-size:.9rem;
- font-weight:800;letter-spacing:.08em;line-height:1;text-shadow:0 1px 5px rgba(0,0,0,.35);
- -webkit-backdrop-filter:blur(5px);backdrop-filter:blur(5px);pointer-events:none
-}
-.site-header{position:relative;z-index:30}
-.hoh-wordmark{font-family:Georgia,"Times New Roman",serif;font-weight:900;letter-spacing:.04em;text-transform:none}
-.site-menu-toggle{display:inline-flex;flex-direction:column;justify-content:center;gap:5px;width:2.8rem;height:2.8rem;margin-left:auto;padding:.7rem;border:1px solid var(--color-border);border-radius:2px;background:transparent;color:var(--color-text);cursor:pointer}
-.site-menu-toggle span{display:block;width:100%;height:1px;background:currentColor;transition:transform 180ms ease,opacity 180ms ease}
-.site-menu-toggle[aria-expanded="true"] span:first-child{transform:translateY(6px) rotate(45deg)}
-.site-menu-toggle[aria-expanded="true"] span:nth-child(2){opacity:0}
-.site-menu-toggle[aria-expanded="true"] span:last-child{transform:translateY(-6px) rotate(-45deg)}
-.site-menu{position:absolute;top:calc(100% + .6rem);right:0;z-index:40;display:grid;min-width:13rem;padding:.55rem;border:1px solid var(--color-border);background:rgba(12,12,12,.97);box-shadow:0 1rem 2.5rem rgba(0,0,0,.38);-webkit-backdrop-filter:blur(14px);backdrop-filter:blur(14px)}
-.site-menu[hidden]{display:none}
-.site-menu a,.site-menu button{display:block;width:100%;padding:.85rem .9rem;border:0;background:transparent;color:var(--color-text);font:inherit;font-size:.78rem;letter-spacing:.12em;text-align:left;text-decoration:none;text-transform:uppercase;cursor:pointer}
-.site-menu a:hover,.site-menu button:hover{background:rgba(255,255,255,.07)}
-.about-dialog{width:min(92vw,38rem);padding:clamp(1.5rem,4vw,2.5rem);border:1px solid var(--color-border);background:#101010;color:var(--color-text)}
-.about-dialog::backdrop{background:rgba(0,0,0,.78);backdrop-filter:blur(5px)}
-.about-dialog h2{margin:.2rem 0 1rem;font-family:var(--font-family-heading);font-size:clamp(2rem,5vw,3rem);font-weight:400}
-.about-dialog p{color:var(--color-muted);line-height:1.75}
-.about-dialog-close{float:right;border:0;background:transparent;color:var(--color-text);font-size:2rem;cursor:pointer}
-.about-dialog-contact a{color:var(--color-text)}
-@media(max-width:600px){.site-menu{right:0;min-width:min(16rem,calc(100vw - 2rem))}.render-card.hoh-watermarked::after,.art-card.hoh-watermarked::after,.blueprint-card.hoh-watermarked::after{top:.45rem;right:.45rem}}
 
-/* Visible HoH stamp sits directly over each secondary image, not behind its card. */
-.render-card .project-image-trigger,
-.art-card .project-image-trigger,
-.blueprint-card .sheet-trigger { position: relative; }
-.hoh-watermark {
-  position: absolute;
-  top: .65rem;
-  right: .65rem;
-  z-index: 20;
-  display: inline-block;
-  padding: .22rem .55rem .25rem;
-  border: 1px solid rgba(255,255,255,.34);
-  border-radius: 2px;
-  background: rgba(255,255,255,.16);
-  color: rgba(255,255,255,.78);
-  font-family: Georgia, "Times New Roman", serif;
-  font-size: .95rem;
-  font-weight: 900;
-  letter-spacing: .08em;
-  line-height: 1;
-  text-shadow: 0 1px 4px rgba(0,0,0,.8);
-  -webkit-backdrop-filter: blur(5px);
-  backdrop-filter: blur(5px);
-  pointer-events: none;
-}
-@media(max-width:600px){.hoh-watermark{top:.45rem;right:.45rem;font-size:.85rem}}
+/* HoH mark belongs to the enlarged image presentation; gallery thumbnails remain untouched. */
+.viewer-image-frame{position:relative;width:100%;max-height:72vh;display:grid;place-items:center;transform-origin:center center;transition:none;will-change:transform}
+.viewer-image-frame .viewer-image{width:100%;max-height:72vh;object-fit:contain}
+.viewer-hoh-mark{position:absolute;top:.8rem;right:.9rem;z-index:3;padding:0;border:0;border-radius:0;background:transparent;color:rgba(255,255,255,.72);font-family:Georgia,"Times New Roman",serif;font-size:clamp(1.1rem,2.1vw,1.8rem);font-weight:900;letter-spacing:.09em;line-height:1;text-shadow:0 1px 3px rgba(0,0,0,.9),0 0 8px rgba(255,255,255,.12);pointer-events:none;user-select:none}
