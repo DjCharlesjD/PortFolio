@@ -153,6 +153,8 @@ window.addEventListener('popstate', () => {
 // =====================================================
 
 const viewerImage = document.querySelector('.viewer-image');
+const viewerImageFrame = document.querySelector('.viewer-image-frame');
+const viewerHohMark = document.querySelector('.viewer-hoh-mark');
 const viewerCaption = document.querySelector('.viewer-caption');
 const closeButton = document.querySelector('.viewer-close');
 
@@ -172,6 +174,27 @@ function updateViewerImage() {
     `translate3d(${imagePanX}px, ${imagePanY}px, 0) scale(${imageZoom})`;
 
   viewerImage.style.cursor = imageZoom > 1 ? 'grab' : 'zoom-in';
+}
+
+
+function positionViewerHohMark() {
+  if (!viewerImage || !viewerImageFrame || !viewerHohMark || !viewerImage.naturalWidth) return;
+  const boxWidth = viewerImage.clientWidth;
+  const boxHeight = viewerImage.clientHeight;
+  const imageRatio = viewerImage.naturalWidth / viewerImage.naturalHeight;
+  const boxRatio = boxWidth / boxHeight;
+  let renderedWidth, renderedHeight;
+  if (imageRatio > boxRatio) {
+    renderedWidth = boxWidth;
+    renderedHeight = boxWidth / imageRatio;
+  } else {
+    renderedHeight = boxHeight;
+    renderedWidth = boxHeight * imageRatio;
+  }
+  const insetTop = (boxHeight - renderedHeight) / 2;
+  const insetRight = (boxWidth - renderedWidth) / 2;
+  viewerHohMark.style.top = (insetTop + 12) + 'px';
+  viewerHohMark.style.right = (insetRight + 12) + 'px';
 }
 
 function resetViewerImage() {
