@@ -489,3 +489,28 @@ for (const folder of document.querySelectorAll('.collection-folder')) {
     }
   });
 }
+
+
+/* HoH menu and automatic watermarking for ordinary gallery images. */
+const siteMenuToggle=document.querySelector('.site-menu-toggle');
+const siteMenu=document.querySelector('.site-menu');
+const aboutDialog=document.getElementById('about-dialog');
+const aboutDialogClose=document.querySelector('.about-dialog-close');
+function closeSiteMenu(){if(!siteMenu||!siteMenuToggle)return;siteMenu.hidden=true;siteMenuToggle.setAttribute('aria-expanded','false');siteMenuToggle.setAttribute('aria-label','Open menu')}
+siteMenuToggle?.addEventListener('click',()=>{const opening=siteMenu?.hidden??true;if(siteMenu)siteMenu.hidden=!opening;siteMenuToggle.setAttribute('aria-expanded',String(opening));siteMenuToggle.setAttribute('aria-label',opening?'Close menu':'Open menu')});
+siteMenu?.addEventListener('click',event=>{
+ const action=event.target.closest('[data-menu-action]')?.dataset.menuAction;
+ if(!action){if(event.target.closest('[data-menu-close]'))closeSiteMenu();return}
+ closeSiteMenu();
+ if(action==='about')aboutDialog?.showModal();
+ if(action==='projects')document.querySelector('[data-main-category="architecture"]')?.click();
+ if(action==='art'){document.querySelector('.category-tag[aria-controls="art-section-view"]')?.click();document.getElementById('art-section-view')?.scrollIntoView({behavior:'smooth',block:'start'})}
+ if(action==='publications'){document.querySelector('[data-main-category="architecture"]')?.click();setTimeout(()=>document.querySelector('[data-open-architecture-project="project4"]')?.click(),80)}
+});
+aboutDialogClose?.addEventListener('click',()=>aboutDialog?.close());
+aboutDialog?.addEventListener('click',event=>{if(event.target===aboutDialog)aboutDialog.close()});
+document.addEventListener('keydown',event=>{if(event.key==='Escape')closeSiteMenu()});
+function applyHoHWatermarks(root=document){root.querySelectorAll('.render-card:not(.project-two-hero),.art-card,.blueprint-card').forEach(card=>{if(card.querySelector('img'))card.classList.add('hoh-watermarked')})}
+applyHoHWatermarks();
+const hohWatermarkObserver=new MutationObserver(records=>{for(const record of records){for(const node of record.addedNodes){if(node.nodeType===1){if(node.matches?.('.render-card,.art-card,.blueprint-card'))applyHoHWatermarks(node.parentElement||document);else applyHoHWatermarks(node)}}}});
+hohWatermarkObserver.observe(document.body,{childList:true,subtree:true});
